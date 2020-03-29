@@ -391,3 +391,33 @@ button:hover{
     color:#4a4a4a;
     font-size: 0.95em;
     margin-bottom: 40px;
+}
+
+@media (min-width:1401px){
+    #main{
+        width:100%;
+    }
+}
+
+@media (max-width:1514px){
+    #main{
+        /*padding: 100px 10%;*/
+        width:100%;
+    }
+    
+    .cards{
+        width: 17%;
+    }
+}
+
+@media (max-width:700px){
+    #main div {
+        
+        width:100%!important;
+        /*margin-bottom: 20px;*/
+    }
+    
+    .cards{
+        width: 10px;
+    }
+}
