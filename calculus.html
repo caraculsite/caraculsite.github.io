@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="CSS/calculus.css">
+    <link rel="stylesheet" href="WWW/index.html">
+    <script>
+    
+    function insert(num){
+        document.form.textview.value=document.form.textview.value+num;
+    }
+        
+        function equal(){
+            var exp=document.form.textview.value;
+            if(exp){
+                document.form.textview.value=eval(exp)
+            }
+        }
+        
+        function c(){
+            document.form.textview.value="";
+        }
+        
+        function back(){
+            
+            var exp = document.form.textview.value;
+            document.form.textview.value=exp.substring(0,exp.length-1);
+        }
+        
+    </script>
+    <style>
+    
+        *{
+            margin: 0;
+            padding: 0;
+            
+            
+            
+        }
+        
+        .button{
+            width: 50px;
+            height: 50px;
+            font-size: 25px;
+            margin: 2px;
+            cursor: pointer;
+            background: #607d8b;
+            border: none;
+            color: white;
+            
+        }
+        
+        .button:hover{
+            background: black;
+        }
+        
+        .textview{
+            width: 206px;
+            margin: 5px;
+            font-size: 25px;
+            padding: 5px;
+            border: none;
+            color: #607d8b;
+        }
+        .main{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            
+        }
+        
+      
+        
+        .bg{
+            height: 753px;
+          background: linear-gradient(to right, #e91e63, #3f51b5);
+        }
+        
+    </style>
+</head>
+<body>
+ <div class="bg">
+   
+    <header>
+        <div id="logo" onclick="slowScroll('#top')">
+      <span>libProger</span>
+        <div id="sidebar">
+        <div class="toggle-btn" onclick="openMenu()" >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="indexkursy.html">Kursy</a></li>
+            <li><a href="aboutus.html">O nas</a></li>
+            <li><a href="calculus.html">Calculator</a></li>
+        </ul>
+        </div>
+    </div>
+    
+    </header>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    <div class="main">
+        <form name ="form">
+            <input class="textview" name="textview">
+            </form>
+            <table>
+               <tr>
+                <td><input class="button" type="button" value="C" onclick="c()"></td>
+                <td><input class="button" type="button" value="<" onclick="back()"></td>
+                <td><input class="button" type="button" value="/" onclick="insert('/')"></td>
+                <td><input class="button" type="button" value="X" onclick="insert('*')"></td>
+                </tr>
+                
+                <tr>
+                <td><input class="button" type="button" value="7" onclick="insert(7)"></td>
+                <td><input class="button" type="button" value="8" onclick="insert(8)"></td>
+                <td><input class="button" type="button" value="9" onclick="insert(9)"></td>
+                <td><input class="button" type="button" value="-" onclick="insert('-')"></td>
+                </tr>
+                
+                <tr>
+                <td><input class="button" type="button" value="4" onclick="insert(4)"></td>
+                <td><input class="button" type="button" value="5" onclick="insert(5)"></td>
+                <td><input class="button" type="button" value="6" onclick="insert(6)"></td>
+                <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
+                </tr>
+                
+                <tr>
+                <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
+                <td><input class="button" type="button" value="2" onclick="insert(2)"></td>
+                <td><input class="button" type="button" value="3" onclick="insert(3)"></td>
+                <td rowspan="2"><input class="button" style="height: 106px" type="button" value="=" onclick="equal()"></td>
+                </tr>
+                
+                <tr>
+                <td colspan="2"><input class="button" style="width: 106px" type="button" value="0" onclick="insert(0)"></td>
+                <td><input class="button" type="button" value="." onclick="insert('.')"></td>
+                
+                </tr>
+            </table>
+    </div>
+    </div>
+    
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+  <script>
+      
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+        
+    
+    });
+       
+    </script>
+    
+    
+    <script>
+    
+  $(document).ready(function(){
+    $(window).scroll(function(){  
+        if ($(window).scrollTop() > 15 ){
+            $(".toggle-btn span").css("background", "#343434");
+           
+              
+            
+                
+        }
+    });
+});
+    </script>
+    
+     <script>
+    
+  $(document).ready(function(){
+    $(window).scroll(function(){  
+        if ($(window).scrollTop() < 15 ){
+            $(".toggle-btn span").css("background", "black");
+           
+              
+            
+                
+        }
+    });
+});
+    </script>
+    
+    <script>
+    function openMenu(){
+        document.getElementById("sidebar").classList.toggle('active');
+        
+        
+    }
+    </script>
+    
+    
+</body>
+
+</html>
